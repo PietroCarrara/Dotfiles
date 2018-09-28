@@ -46,9 +46,15 @@ dotfiles:
     - plug
     dst: ~/.config/nvim/init.vim
     src: config/nvim/init.vim
+  f_input.conf:
+    dst: ~/.config/mpv/input.conf
+    src: config/mpv/input.conf
   f_lock:
     dst: /usr/bin/lock
     src: usr/bin/lock
+  f_mpv.conf:
+    dst: ~/.config/mpv/mpv.conf
+    src: config/mpv/mpv.conf
   f_music.json:
     dst: ~/.config/i3/music.json
     src: config/i3/music.json
@@ -99,3 +105,5 @@ profiles:
     - f_prisma.css.template
     - f_config.py
     - f_config.py.template
+    - f_mpv.conf
+    - f_input.conf
