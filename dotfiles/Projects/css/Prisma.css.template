@@ -1,0 +1,102 @@
+/*
+ * Prisma.css
+ * Copyright (C) 2018 pietro
+ *
+ * Distributed under terms of the MIT license.
+ */
+
+* {
+    background: none!important;
+    color: #{{ color7 }} !important;
+}
+html {
+    background: #{{ color0 }} !important;
+    background-image: url('https://i.imgur.com/sqmWgO8.png') !important;
+    background-position: left bottom !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    background-size: 13% !important;
+    background-position-x: 10px !important;
+}
+hr {
+    display: none;
+}
+.prettyprint {
+    max-width: none !important;
+    width: 100% !important;
+    display: inline-block !important;
+}
+div.post.reply:not(.highlight):not(.highlight-anti),
+.op {
+    background-color: #{{ color0 }} !important;
+    border: 3px solid #{{ color7 }} !important;
+    width: 100% !important;
+    display: inline-block !important;
+    margin-bottom: 8px !important;
+    margin-top: 8px !important;
+    box-shadow: 1px 1px 8px black;
+}
+.reply:target,
+.reply.highlight,
+.reply.highlight-anti {
+    background-color: #{{ color1 }} !important;
+    border: 3px solid #{{ color3 }} !important;
+    width: 100% !important;
+    display: inline-block !important;
+    margin-bottom: 8px !important;
+    margin-top: 8px !important;
+    box-shadow: 1px 1px 8px black;
+}
+div.thread > div:nth-of-type(2) > div.reply {
+    margin-top: 8px !important;
+}
+.preview,
+.reveal-spoilers,
+#quote-preview {
+    display: inline-block !important;
+    width: 35% !important;
+}
+div.extended-small {
+    padding-left: 15% !important;
+}
+div.extended-small > div.thread {
+    padding-left: 0%;
+    padding-right: 0%;
+}
+#quickReply {
+    background: #{{ color0 }}!important;
+    left: 81% !important;
+    top: 47% !important;
+    border: 3px solid #ECD7E0 !important;
+}
+.file.image-expanded {
+    max-width: none !important;
+    z-index: 1 !important;
+}
+.quotelink,
+.postMenuBtn,
+.replylink:not(:hover),
+a.quotelink:hover,
+a.quotelink:visited,
+.replylink:hover,
+.replylink:visited,
+a,
+a:visited {
+    color: #{{ color5 }} !important;
+}
+a.fileThumb {
+    box-shadow: 2px 2px 4px black;
+}
+div.thread {
+    padding-left: 20%;
+    padding-right: 20%;
+    margin: auto !important;
+    margin-top: 5% !important;
+}
+textarea {
+    width: 100% !important;
+    min-width: 0px !important;
+}
+.quote {
+    color: #{{ color4 }} !important;
+}
