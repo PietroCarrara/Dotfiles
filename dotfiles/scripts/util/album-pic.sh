@@ -1,7 +1,9 @@
 #!/bin/sh
 
-MUSIC_ROOT="~/Music/"
-NO_PIC="~/Pictures/.no-pic.png"
+MUSIC_ROOT="$HOME/Music/"
+NO_PIC="$HOME/Pictures/.no-pic.png"
+
+echo $MUSIC_ROOT
 
 function findpic() {
 	current_dir=$(mpc current -f %file%) # Get current file
