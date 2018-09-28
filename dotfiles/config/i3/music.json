@@ -1,0 +1,76 @@
+{
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 200,
+                       "width": 200,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "GTK Icon View",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                       "class": "^Goview$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "pixel",
+            "floating": "auto_off",
+            "geometry": {
+               "height": 340,
+               "width": 484,
+               "x": 0,
+               "y": 0
+            },
+            "name": "cava",
+            "percent": 0.5,
+            "swallows": [
+               {
+               "class": "^URxvt$",
+               "title": "^cava$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "pixel",
+    "floating": "auto_off",
+    "geometry": {
+       "height": 340,
+       "width": 484,
+       "x": 0,
+       "y": 0
+    },
+    "name": "CALEN - Crazy Sunshine",
+    "percent": 0.5,
+    "swallows": [
+       {
+       "class": "^URxvt$",
+       "instance": "^urxvt$"
+       }
+    ],
+    "type": "con"
+}
+

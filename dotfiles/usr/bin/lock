@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# Get X colors
+for i in {0..15}; do
+	c=$(/usr/bin/xrdb -query /home/pietro/.Xresourses | /usr/bin/grep "*color$i:")
+	c=${c#*#}
+	color[$i]="#$c"
+done
+
+
+# --insidecolor=${color[0]}FF \
+# --ringcolor=${color[7]}A0 \
+# --layoutcolor=${color[7]}FF \
+# --verifcolor=${color[7]}FF \
+# --wrongcolor=${color[7]}FF \
+# --keyhlcolor=${color[0]}FF \
+# --insidevercolor=${color[0]}A0 \
+# --insidewrongcolor=#000000B0 \
+# --ringvercolor=${color[4]}FF \
+# --ringwrongcolor=${color[2]}FF \
+# --linecolor=#00000000 \
+# --separatorcolor=${color[5]}FF \
+# --bshlcolor=${color[7]}FF \
+# --radius 80
+
+/usr/bin/i3lock -k -u \
+-i /home/pietro/Pictures/.lock \
+--datecolor=${color[7]}FF \
+--timecolor=${color[7]}FF \
+--layout-font="terminus (ttf)" \
+--timestr="" \
+--indpos="26:715" \
+--date-font="Roboto" \
+--time-font="Roboto" \
+--datestr="" \
+--time-align 1 \
+--date-align 1 &
+
+# Unlock on mouse movement :)
+loop=true
+while [ $loop == true ]; do
+	eval $(xdotool getmouselocation --shell)
+	if [ 0 = $X ] && [ 0 = $Y ]; then
+		loop=false
+	fi
+	sleep 0.1
+done
+pkill i3lock

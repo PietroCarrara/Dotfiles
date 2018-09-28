@@ -120,8 +120,8 @@ bindsym $mod+o exec --no-startup-id mpc clear && mpc ls | grep -i "$(zenity --en
 bindsym $mod+Shift+o exec --no-startup-id mpc clear && mpc ls | grep -i "$(zenity --entry --text='What to play next?')" | mpc add && mpc shuffle && mpc play
 
 # Screenshot
-bindsym Print exec --no-startup-id sh /home/pietro/.scripts/util/scrot.sh
-bindsym $mod+Print exec --no-startup-id import -frame -window $(xdotool getwindowfocus) /home/pietro/.scripts/util/filer.sh ~/Pictures/Screenshots Screenshot png
+bindsym Print exec --no-startup-id sh scrot.sh
+bindsym $mod+Print exec --no-startup-id import -frame -window $(xdotool getwindowfocus) filer.sh ~/Pictures/Screenshots Screenshot png
 
 # Rand pape
 bindsym $mod+Shift+b exec --no-startup-id set-pape.sh

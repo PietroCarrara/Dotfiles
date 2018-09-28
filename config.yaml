@@ -25,12 +25,27 @@ dotfiles:
     - plug
     dst: ~/.config/nvim/init.vim
     src: config/nvim/init.vim
+  f_lock:
+    dst: /usr/bin/lock
+    src: usr/bin/lock
+  f_music.json:
+    dst: ~/.config/i3/music.json
+    src: config/i3/music.json
   f_polybar_config:
     dst: ~/.config/polybar/config
     src: config/polybar/config
   f_profile:
     dst: /etc/profile
     src: etc/profile
+  f_rc.conf:
+    dst: ~/.config/ranger/rc.conf
+    src: config/ranger/rc.conf
+  f_rifle.conf:
+    dst: ~/.config/ranger/rifle.conf
+    src: config/ranger/rifle.conf
+  f_toggle:
+    dst: /usr/bin/toggle
+    src: usr/bin/toggle
   f_zshrc:
     dst: ~/.zshrc
     src: zshrc
@@ -43,3 +58,8 @@ profiles:
     - f_zshrc
     - f_profile
     - d_scripts
+    - f_rc.conf
+    - f_rifle.conf
+    - f_music.json
+    - f_toggle
+    - f_lock
