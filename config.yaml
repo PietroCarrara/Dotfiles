@@ -1,7 +1,8 @@
 actions:
-    pre:
-        plug-inst: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        plug: nvim +PlugInstall +qall
+  pre:
+    plug: nvim +PlugInstall +qall
+    plug-inst: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 config:
   backup: true
   banner: true
@@ -12,17 +13,33 @@ config:
   longkey: false
   workdir: ~/.config/dotdrop
 dotfiles:
+  d_scripts:
+    dst: ~/.scripts
+    src: scripts
   f_config:
     dst: ~/.config/i3/config
     src: config/i3/config
   f_init.vim:
+    actions:
+    - plug-inst
+    - plug
     dst: ~/.config/nvim/init.vim
     src: config/nvim/init.vim
-    actions:
-        - plug-inst
-        - plug
+  f_polybar_config:
+    dst: ~/.config/polybar/config
+    src: config/polybar/config
+  f_profile:
+    dst: /etc/profile
+    src: etc/profile
+  f_zshrc:
+    dst: ~/.zshrc
+    src: zshrc
 profiles:
   the-arch:
     dotfiles:
     - f_config
     - f_init.vim
+    - f_polybar_config
+    - f_zshrc
+    - f_profile
+    - d_scripts

@@ -1,0 +1,96 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+# End of lines configured by zsh-newuser-install
+
+# Vim mode on ESC
+set -o vi
+
+# Autocomplete files
+fpath=($HOME/.zsh-completions $fpath)
+
+# Autocomplete
+autoload -U compinit
+compinit
+# Autocomplete end
+
+export EDITOR="nvim"
+export GOPATH="$HOME/go"
+
+# Ctrl + arrows
+bindkey "\eOd" backward-word
+bindkey "\eOc" forward-word
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias v='nvim'
+alias q=exit
+alias cd..='cd ..'
+alias deluged='LD_LIBRARY_PATH=/opt/boostold deluged -p 58846'
+
+# 4chan always impresses me
+mkcd() {
+  mkdir -p "$1"
+  cd "$1"  
+}
+
+dotinit() {
+	echo "config:
+  backup: true
+  create: true
+  dotpath: dotfiles
+  banner: true
+  longkey: false
+  keepdot: false
+  link_by_default: false
+dotfiles:
+profiles:" > config.yaml
+}
+
+cheat() {
+	curl "cheat.sh/$@"
+}
+
+alias gocd='cd ~/go/src/github.com/PietroCarrara/'
+
+# what's this?
+function owo() {
+  neofetch
+  toilet -f future --filter metal 'IS THIS THE NEW DESKTOP THREAD?'
+}
+
+# Generate qr code
+function qr() {
+	echo $@ | curl -F-=\<- qrenco.de
+}
+
+# Go Build
+function gorun() {
+	if go build; then
+		./${PWD##*/} "$@"
+	fi
+}
+
+function mango() {
+	dir="$PWD"
+	cd /home/pietro/go/src/github.com/PietroCarrara/mango
+	gorun "$dir"
+}
+
+function getPrompt() {
+	if [[ "$PWD" == "$HOME" ]]; then
+		echo -n "[$USER]-[~]
+:"
+	else
+		echo -n "[$USER]-[$(basename "$PWD")]
+:"
+	fi
+}
+
+PROMPT=$(getPrompt)
+autoload -U add-zsh-hook
+add-zsh-hook chpwd update_prompt
+function update_prompt() {
+	PROMPT=$(getPrompt)
+}
