@@ -1,0 +1,279 @@
+# Workspaces
+set $ws1 1:I
+set $ws2 2:II
+set $ws3 3:III
+set $ws4 4:IV
+set $ws5 5:V
+set $ws6 6:VI
+set $ws7 7:VII
+set $ws8 8:VIII
+set $ws9 9:IX
+set $ws0 10:X
+
+# Gaps
+set $inner 15
+set $outer 10
+gaps inner $inner
+gaps outer $outer
+
+# ModKey
+set $mod Mod4
+
+# Term
+set $term urxvtc
+
+# Colors
+set_from_resource $fg i3wm.color7
+set_from_resource $bg i3wm.color0
+set_from_resource $color0 i3wm.color0
+set_from_resource $color1 i3wm.color1
+set_from_resource $color2 i3wm.color 2
+set_from_resource $color3 i3wm.color3
+set_from_resource $color4 i3wm.color4
+set_from_resource $color5 i3wm.color5
+set_from_resource $color6 i3wm.color6
+set_from_resource $color7 i3wm.color7
+set_from_resource $color8 i3wm.color8
+set_from_resource $color9 i3wm.color9
+set_from_resource $color10 i3wm.color10
+set_from_resource $color11 i3wm.color11
+set_from_resource $color12 i3wm.color12
+set_from_resource $color13 i3wm.color13
+set_from_resource $color14 i3wm.color14
+set_from_resource $color15 i3wm.color15
+
+client.focused 				black black black $fg $fg
+client.unfocused			black black black $bg $bg
+client.focused_inactive		black black black $bg $bg
+client.urgent				black black black $bg $bg
+
+# smart_gaps on
+bindsym $mod+plus gaps inner current plus 5
+bindsym $mod+minus gaps inner current minus 5
+bindsym $mod+Shift+plus gaps outer current plus 5
+bindsym $mod+Shift+minus gaps outer current minus 5
+bindsym $mod+Control+plus gaps inner current set $inner
+bindsym $mod+Control+minus gaps outer current set $outer
+
+new_window pixel 4
+
+# Font
+font pango:kakwa kakwafont 9
+
+# Floating terminal
+for_window [title="float"] floating enable
+for_window [title="Code Overlord"] floating enable
+for_window [class="Unity"] floating enable
+for_window [class="plasmashell"] floating enable
+for_window [class="Viewnior"] floating enable
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Standalone Meta Key
+# bindcode 133 --release exec --no-startup-id notify-send wow WOW
+
+# Start a terminal
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $term --title "float"
+
+# "Minimize" window
+bindsym $mod+n move scratchpad
+bindsym $mod+Shift+n scratchpad show
+
+bindsym $mod+i exec --no-startup-id "mpc clear; mpc load Favoritas; mpc shuffle; mpc play 1"
+bindsym $mod+Shift+i exec $term --title "float" -e nvim ~/Docs/todo
+
+# Lock screen
+bindsym XF86PowerOff exec --no-startup-id lock
+
+# Volume
+bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym $mod+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym $mod+XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1%
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym $mod+Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1%
+bindsym $mod+Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%
+
+# Brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+
+# Media
+bindsym XF86AudioNext exec --no-startup-id mpc next
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
+bindsym XF86AudioPause exec --no-startup-id mpc toggle
+bindsym XF86AudioStop exec --no-startup-id mpc clear
+
+# Suffle playlist
+bindsym $mod+p exec --no-startup-id "mpc clear; mpc add /; mpc shuffle; mpc play"
+
+# Set playlist
+bindsym $mod+o exec --no-startup-id mpc clear && mpc ls | grep -i "$(zenity --entry --text='What to play next?')" | mpc add && mpc play
+# Set and shuffle playlist
+bindsym $mod+Shift+o exec --no-startup-id mpc clear && mpc ls | grep -i "$(zenity --entry --text='What to play next?')" | mpc add && mpc shuffle && mpc play
+
+# Screenshot
+bindsym Print exec --no-startup-id sh /home/pietro/.scripts/util/scrot.sh
+bindsym $mod+Print exec --no-startup-id import -frame -window $(xdotool getwindowfocus) /home/pietro/.scripts/util/filer.sh ~/Pictures/Screenshots Screenshot png
+
+# Rand pape
+bindsym $mod+Shift+b exec --no-startup-id set-pape.sh
+
+# xbanish
+bindsym $mod+m exec --no-startup-id toggle xbanish
+
+# File Manager
+bindsym $mod+t exec $term -e ranger
+bindsym $mod+Shift+t exec $term --title float -e ranger
+
+# Web Browser
+bindsym $mod+w exec firefox
+
+# Center window
+bindsym $mod+c move position center
+
+# Toggle compton
+bindsym $mod+x exec --no-startup-id toggle compton -b
+
+# Toggle polybar
+bindsym $mod+z exec --no-startup-id toggle polybar top
+
+# Screen key
+bindsym $mod+y exec --no-startup-id xdotool key $(zenity --entry | sed -e 's/\(.\)/\U\1\L space /g' | sed -e 's/   / space /g')
+
+# Record screen
+bindsym $mod+u exec --no-startup-id toggle ffmpeg -video_size 1366x768 -framerate 60 -f x11grab -i :0.0 -c:v libx264 -preset ultrafast -y Videos/screencast.mkv
+
+# Hide stuff
+bindsym $mod+Shift+d exec --no-startup-id pactl set-sink-volume 1 0% ; workspace Programção; exec $term -e top ; exec $term -e nvim /bin/neofetch
+
+# kill focused window
+bindsym $mod+Shift+c kill
+
+# start dmenu (a program launcher)
+bindsym $mod+r exec --no-startup-id dmenu_run -fn "kakwa kakwafont" -nb "$bg" -nf "$fg" -sf "$bg" -sb "$fg"
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+bindsym $mod+k focus up
+bindsym $mod+j focus down
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+j move down
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+# bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
+bindsym $mod+Tab workspace back_and_forth
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
+
+# reload the configuration file
+bindsym $mod+Shift+q reload
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exit
+bindsym $mod+Shift+r restart
+
+# resize window (you can also use the mouse for that)
+bindsym $mod+Control+h resize shrink width 20 px or 5 ppt
+bindsym $mod+Control+l resize grow width 20 px or 5 ppt
+bindsym $mod+Control+k resize shrink height 20 px or 5 ppt
+bindsym $mod+Control+j resize grow height 20 px or 5 ppt
+bindsym $mod+Control+Right resize shrink width 20 px or 5 ppt
+bindsym $mod+Control+Left resize grow width 20 px or 5 ppt
+bindsym $mod+Control+Up resize shrink height 20 px or 5 ppt
+bindsym $mod+Control+Down resize grow height 20 px or 5 ppt
+
+# Lock the screen
+exec --no-startup-id lock
+
+# Wallpaper
+exec --no-startup-id feh --bg-fill ~/Pictures/.wallpaper
+
+# Automounter
+exec --no-startup-id udiskie
+
+# Terminal daemon
+exec --no-startup-id urxvtd
+
+# Status Bar
+exec --no-startup-id polybar top
+
+exec --no-startup-id mpd
+exec --no-startup-id compton
+exec --no-startup-id LD_LIBRARY_PATH=/opt/boostold deluged -p 58846
+exec --no-startup-id deluge
+exec --no-startup-id deluge-web -p 12345
+exec --no-startup-id dunst
+exec --no-startup-id xbanish
+
+exec --no-startup-id /usr/lib/kdeconnectd
+
+exec --no-startup-id "musicplayer.sh"
