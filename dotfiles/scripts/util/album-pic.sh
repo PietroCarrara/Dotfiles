@@ -3,8 +3,6 @@
 MUSIC_ROOT="$HOME/Music/"
 NO_PIC="$HOME/Pictures/.no-pic.png"
 
-echo $MUSIC_ROOT
-
 function findpic() {
 	current_dir=$(mpc current -f %file%) # Get current file
 	current_dir=$MUSIC_ROOT$current_dir # Music path relative to filesystem 
