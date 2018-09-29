@@ -17,7 +17,7 @@ function buildDunst() {
 }
 
 function buildHomePage() {
-	"$HOME/.scripts/util/replacer/replacer.sh" "$HOME/.config/dunst/dunstrc.template"
+	"$HOME/.scripts/util/replacer/replacer.sh" "$HOME/.config/homepage/style.css.template"
 }
 
 function buildXresources() {
