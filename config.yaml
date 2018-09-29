@@ -104,6 +104,7 @@ profiles:
     - f_profile-switch.sh
     - f_config
     - f_lock
+    - d_scripts
   work:
     dotfiles:
     - f_config
