@@ -103,6 +103,7 @@ profiles:
     dotfiles:
     - f_profile-switch.sh
     - f_config
+    - f_lock
   work:
     dotfiles:
     - f_config
