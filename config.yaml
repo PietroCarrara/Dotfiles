@@ -1,4 +1,7 @@
 actions:
+  dunst-run: pkill dunst; i3-msg exec dunst
+  i3-run: i3-msg restart
+  polybar-run: pkill polybar; i3-msg exec polybar top
   pre:
     plug: nvim +PlugInstall +qall
     plug-inst: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
@@ -23,6 +26,8 @@ dotfiles:
     dst: ~/.config/cava/config
     src: config/cava/config
   f_config:
+    actions:
+    - i3-run
     dst: ~/.config/i3/config
     src: config/i3/config
   f_config.py:
@@ -35,6 +40,8 @@ dotfiles:
     dst: ~/.config/cava/config.template
     src: config/cava/config.template
   f_dunstrc:
+    actions:
+    - dunst-run
     dst: ~/.config/dunst/dunstrc
     src: config/dunst/dunstrc
   f_dunstrc.template:
@@ -59,6 +66,8 @@ dotfiles:
     dst: ~/.config/i3/music.json
     src: config/i3/music.json
   f_polybar_config:
+    actions:
+    - polybar-run
     dst: ~/.config/polybar/config
     src: config/polybar/config
   f_prisma.css:
@@ -70,6 +79,9 @@ dotfiles:
   f_profile:
     dst: /etc/profile
     src: etc/profile
+  f_profile-switch.sh:
+    dst: ~/.scripts/util/profile-switch.sh
+    src: scripts/util/profile-switch.sh
   f_rc.conf:
     dst: ~/.config/ranger/rc.conf
     src: config/ranger/rc.conf
@@ -83,19 +95,24 @@ dotfiles:
     dst: ~/.zshrc
     src: zshrc
 profiles:
+  rice:
+    dotfiles: []
+    include:
+    - work
   the-arch:
+    dotfiles:
+    - f_profile-switch.sh
+    - f_config
+  work:
     dotfiles:
     - f_config
     - f_init.vim
     - f_polybar_config
     - f_zshrc
-    - f_profile
     - d_scripts
     - f_rc.conf
     - f_rifle.conf
     - f_music.json
-    - f_toggle
-    - f_lock
     - f_cava_config
     - f_config.template
     - f_dunstrc

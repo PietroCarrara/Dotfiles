@@ -12,7 +12,11 @@ set $ws0 10:X
 
 # Gaps
 set $inner 15
+{%@@ if profile == "work" @@%}
 set $outer 10
+{%@@ else @@%}
+set $outer 40
+{%@@ endif @@%}
 gaps inner $inner
 gaps outer $outer
 
