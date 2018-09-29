@@ -88,6 +88,9 @@ bindsym $mod+Shift+n scratchpad show
 bindsym $mod+i exec --no-startup-id "mpc clear; mpc load Favoritas; mpc shuffle; mpc play 1"
 bindsym $mod+Shift+i exec $term --title "float" -e nvim ~/Docs/todo
 
+# Switch dotdrop profile
+bindsym $mod+Shift+p exec --no-startup-id profile-switch.sh
+
 # Lock screen
 bindsym XF86PowerOff exec --no-startup-id lock
 
