@@ -17,3 +17,5 @@ fi
 cd $HOME/Projects/Dotfiles
 
 dotdrop install -f -p $profile
+
+rice.sh
