@@ -4,7 +4,7 @@
 umask 022
 
 # Set our default path
-PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:$HOME/go/bin:$HOME/.config/composer/vendor/bin:$HOME/.scripts/util:$HOME/.scripts/images"
+PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:$HOME/go/bin:$HOME/.config/composer/vendor/bin:$HOME/.scripts/util:$HOME/.scripts/images:$HOME/.scripts/util/replacer"
 export PATH
 
 GOPATH="$HOME/go"

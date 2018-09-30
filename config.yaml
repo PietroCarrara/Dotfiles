@@ -1,6 +1,6 @@
 actions:
   dunst-run: pkill dunst; i3-msg exec dunst
-  i3-run: i3-msg restart; sleep 1
+  i3-run: i3-msg restart; while ! i3-msg; do done
   polybar-run: pkill polybar; i3-msg exec polybar top
   pre:
     plug: nvim +PlugInstall +qall
@@ -98,10 +98,6 @@ dotfiles:
     dst: ~/.zshrc
     src: zshrc
 profiles:
-  rice:
-    dotfiles: []
-    include:
-    - work
   the-arch:
     dotfiles:
     - ALL
@@ -109,3 +105,7 @@ profiles:
     dotfiles: []
     include:
     - the-arch
+  rice:
+    dotfiles: []
+    include:
+    - work
