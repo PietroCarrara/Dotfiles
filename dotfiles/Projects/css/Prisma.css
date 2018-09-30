@@ -7,16 +7,23 @@
 
 * {
     background: none!important;
-    color: #c3c1c0 !important;
+    color: #cebfbf !important;
 }
 html {
-    background: #151212 !important;
+    background: #2b1c21 !important;
     background-image: url('https://i.imgur.com/sqmWgO8.png') !important;
     background-position: left bottom !important;
     background-attachment: fixed !important;
     background-repeat: no-repeat !important;
     background-size: 13% !important;
     background-position-x: 10px !important;
+}
+img {
+	max-width: 100% !important;
+}
+video {
+	max-width: 94% !important;
+	margin-left: 3% !important;
 }
 hr {
     display: none;
@@ -28,8 +35,8 @@ hr {
 }
 div.post.reply:not(.highlight):not(.highlight-anti),
 .op {
-    background-color: #151212 !important;
-    border: 3px solid #c3c1c0 !important;
+    background-color: #2b1c21 !important;
+    border: 3px solid #cebfbf !important;
     width: 100% !important;
     display: inline-block !important;
     margin-bottom: 8px !important;
@@ -39,8 +46,8 @@ div.post.reply:not(.highlight):not(.highlight-anti),
 .reply:target,
 .reply.highlight,
 .reply.highlight-anti {
-    background-color: #8F4C3A !important;
-    border: 3px solid #CE6E68 !important;
+    background-color: #CD776B !important;
+    border: 3px solid #D39E72 !important;
     width: 100% !important;
     display: inline-block !important;
     margin-bottom: 8px !important;
@@ -64,7 +71,7 @@ div.extended-small > div.thread {
     padding-right: 0%;
 }
 #quickReply {
-    background: #151212!important;
+    background: #2b1c21!important;
     left: 81% !important;
     top: 47% !important;
     border: 3px solid #ECD7E0 !important;
@@ -82,7 +89,7 @@ a.quotelink:visited,
 .replylink:visited,
 a,
 a:visited {
-    color: #989E68 !important;
+    color: #967D82 !important;
 }
 a.fileThumb {
     box-shadow: 2px 2px 4px black;
@@ -98,5 +105,5 @@ textarea {
     min-width: 0px !important;
 }
 .quote {
-    color: #7B8474 !important;
+    color: #F2C07F !important;
 }

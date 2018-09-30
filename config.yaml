@@ -1,6 +1,6 @@
 actions:
   dunst-run: pkill dunst; i3-msg exec dunst
-  i3-run: i3-msg restart; while ! i3-msg; do done
+  i3-run: i3-msg restart; while ! i3-msg; do echo 'waiting for i3, the error msg above is normal'; done
   polybar-run: pkill polybar; i3-msg exec polybar top
   pre:
     plug: nvim +PlugInstall +qall

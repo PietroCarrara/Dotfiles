@@ -18,6 +18,13 @@ html {
     background-size: 13% !important;
     background-position-x: 10px !important;
 }
+img {
+	max-width: 100% !important;
+}
+video {
+	max-width: 94% !important;
+	margin-left: 3% !important;
+}
 hr {
     display: none;
 }
