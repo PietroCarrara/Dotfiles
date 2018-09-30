@@ -17,7 +17,7 @@ function findpic() {
 }
 
 pingo() {
-	curl localhost:6969/setImage -d image="$file" || goview "$file"
+	curl localhost:6969/setImage --data-urlencode  image="$file" || goview "$file"
 }
 
 {

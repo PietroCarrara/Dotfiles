@@ -1,6 +1,5 @@
 actions:
   dunst-run: pkill dunst; i3-msg exec dunst
-  # The sleep is there to ensure i3 has restart when the command ends
   i3-run: i3-msg restart; sleep 1
   polybar-run: pkill polybar; i3-msg exec polybar top
   pre:
@@ -23,6 +22,9 @@ dotfiles:
   d_scripts:
     dst: ~/.scripts
     src: scripts
+  f_album-pic.sh:
+    dst: ~/.scripts/util/album-pic.sh
+    src: scripts/util/album-pic.sh
   f_cava_config:
     dst: ~/.config/cava/config
     src: config/cava/config
@@ -102,28 +104,8 @@ profiles:
     - work
   the-arch:
     dotfiles:
-    - f_profile-switch.sh
-    - f_config
-    - f_lock
-    - d_scripts
+    - ALL
   work:
-    dotfiles:
-    - f_config
-    - f_init.vim
-    - f_polybar_config
-    - f_zshrc
-    - d_scripts
-    - f_rc.conf
-    - f_rifle.conf
-    - f_music.json
-    - f_cava_config
-    - f_config.template
-    - f_dunstrc
-    - f_dunstrc.template
-    - d_homepage
-    - f_prisma.css
-    - f_prisma.css.template
-    - f_config.py
-    - f_config.py.template
-    - f_mpv.conf
-    - f_input.conf
+    dotfiles: []
+    include:
+    - the-arch
