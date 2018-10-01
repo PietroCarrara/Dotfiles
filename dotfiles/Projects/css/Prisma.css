@@ -18,10 +18,10 @@ html {
     background-size: 13% !important;
     background-position-x: 10px !important;
 }
-img {
+img.expanded-thumb {
 	max-width: 100% !important;
 }
-video {
+video.expandedWebm {
 	max-width: 94% !important;
 	margin-left: 3% !important;
 }
