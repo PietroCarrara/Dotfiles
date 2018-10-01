@@ -1,0 +1,16 @@
+URxvt*font: xft:kakwa kakwafont:size=8, xft:Zpix:size=9:antialias=false
+
+URxvt.boldFont:
+
+URxvt.scrollBar: false
+
+URxvt.perl-ext-common: selection-to-clipboard,resize-font
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
