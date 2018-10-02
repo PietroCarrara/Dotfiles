@@ -15,6 +15,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'alvan/vim-closetag'
 	Plug 'lervag/vimtex'
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'Shougo/context_filetype.vim'
 	Plug 'zchee/deoplete-go', { 'do': 'make' }
 "Initialize plugin system
 call plug#end()

@@ -29,6 +29,9 @@ dotfiles:
   f_cava_config:
     dst: ~/.config/cava/config
     src: config/cava/config
+  f_compton.conf:
+    dst: ~/.compton.conf
+    src: compton.conf
   f_config:
     actions:
     - i3-run
