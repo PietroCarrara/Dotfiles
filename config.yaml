@@ -54,6 +54,9 @@ dotfiles:
   f_dunstrc.template:
     dst: ~/.config/dunst/dunstrc.template
     src: config/dunst/dunstrc.template
+  f_index.html:
+    dst: ~/.config/homepage/index.html
+    src: config/homepage/index.html
   f_init.vim:
     actions:
     - plug-inst
