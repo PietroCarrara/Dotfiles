@@ -5,13 +5,11 @@
 call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'fatih/vim-go'
 	Plug 'codelitt/vim-qtpl'
-	Plug 'bling/vim-bufferline'
+	Plug 'ap/vim-buftabline'
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'dylanaraps/wal.vim'
 	Plug 'w0rp/ale'
 	Plug 'scrooloose/nerdtree'
-	Plug 'vim-airline/vim-airline'
-	Plug 'aperezdc/vim-template'
 	Plug 'alvan/vim-closetag'
 	Plug 'lervag/vimtex'
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -97,7 +95,6 @@ nnoremap K :bprev<CR>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 set completeopt-=preview
-set completeopt+=noinsert
 
 " NERDTree
 nnoremap <F3> :NERDTreeToggle<CR>
@@ -106,6 +103,11 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " go-vim
 let g:go_doc_keywordprg_enabled = 0
+let g:go_fmt_command = "goimports"
+
+" Omnisharp
+let g:deoplete_omnisharp_exe_path   = get(g:, "deoplete_omnisharp_exe_path", '~/.local/share/nvim/plugged/deoplete-omnisharp/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe')
+let g:deoplete_omnisharp_port   = get(g:, "deoplete_omnisharp_port", 9999)
 
 " Vim-close tags
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php'

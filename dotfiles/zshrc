@@ -52,10 +52,15 @@ cheat() {
 	curl "cheat.sh/$@"
 }
 
-alias gocd='cd ~/go/src/github.com/PietroCarrara/'
+gocd() {
+	cd ~/go/src/github.com/PietroCarrara/
+	if [ ! -z $1 ]; then
+		cd "$1"
+	fi
+}
 
 # what's this?
-function owo() {
+owo() {
   neofetch
   toilet -f future --filter metal 'IS THIS THE NEW DESKTOP THREAD?'
 }
