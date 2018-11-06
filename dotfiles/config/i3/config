@@ -85,7 +85,7 @@ bindsym $mod+Shift+Return exec $term --title "float"
 bindsym $mod+n move scratchpad
 bindsym $mod+Shift+n scratchpad show
 
-bindsym $mod+i exec --no-startup-id "mpc clear; mpc load Favoritas; mpc shuffle; mpc play 1"
+bindsym $mod+i exec --no-startup-id "mpc crop; mpc load Favoritas; mpc shuffle; mpc play 2; mpc del 1;"
 bindsym $mod+Shift+i exec $term --title "float" -e nvim ~/Docs/todo
 
 # Switch dotdrop profile
@@ -119,12 +119,12 @@ bindsym XF86AudioPause exec --no-startup-id mpc toggle
 bindsym XF86AudioStop exec --no-startup-id mpc clear
 
 # Suffle playlist
-bindsym $mod+p exec --no-startup-id "mpc clear; mpc add /; mpc shuffle; mpc play"
+bindsym $mod+p exec --no-startup-id "mpc crop; mpc add /; mpc shuffle; mpc play 2; mpc del 1;"
 
 # Set playlist
-bindsym $mod+o exec --no-startup-id mpc clear && mpc ls | grep -i "$(zenity --entry --text='What to play next?')" | mpc add && mpc play
+bindsym $mod+o exec --no-startup-id mpc crop && mpc ls | grep -i "$(zenity --entry --text='What to play next?')" | mpc add && mpc play 2 && mpc del 1
 # Set and shuffle playlist
-bindsym $mod+Shift+o exec --no-startup-id mpc clear && mpc ls | grep -i "$(zenity --entry --text='What to play next?')" | mpc add && mpc shuffle && mpc play
+bindsym $mod+Shift+o exec --no-startup-id mpc crop && mpc ls | grep -i "$(zenity --entry --text='What to play next?')" | mpc add && mpc shuffle && mpc play 2 && mpc del 1
 
 # Screenshot
 bindsym Print exec --no-startup-id sh scrot.sh
