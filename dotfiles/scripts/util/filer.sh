@@ -8,10 +8,10 @@ filename=$2
 
 extension=$3
 
-num=1
-
-while (find "$folder/$filename $num.$extension" &> /dev/null); do
-    num=$[num+1]
+for i in {1..9999}; do
+	if [ ! -e "$folder/$filename $i.$extension" ]; then
+		echo "$folder/$filename $i.$extension"
+		exit 0
+	fi
 done
 
-echo "$folder/$filename $num.$extension"

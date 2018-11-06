@@ -22,6 +22,7 @@ export GOPATH="$HOME/go"
 bindkey "\eOd" backward-word
 bindkey "\eOc" forward-word
 
+alias ncdu='echo "\.*" > /tmp/ncdu-ex; ncdu -r -X /tmp/ncdu-ex'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias v='nvim'
@@ -72,8 +73,9 @@ function qr() {
 
 # Go Build
 function gorun() {
+	local proj_name=${PWD##*/}
 	if go build; then
-		./${PWD##*/} "$@"
+		./"$proj_name" "$@"
 	fi
 }
 

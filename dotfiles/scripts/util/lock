@@ -1,0 +1,36 @@
+#!/bin/sh
+
+unlocker() {
+	# Unlock on mouse movement :)
+	loop=true
+	while [ $loop == true ]; do
+		eval $(xdotool getmouselocation --shell)
+		if [ 0 = $X ] && [ 0 = $Y ]; then
+			loop=false
+		fi
+		sleep 0.1
+	done
+	pkill i3lock
+}
+# Get X colors
+for i in {0..15}; do
+	c=$(/usr/bin/xrdb -query /home/pietro/.Xresourses | /usr/bin/grep "*color$i:")
+	c=${c#*#}
+	color[$i]="#$c"
+done
+
+unlocker &
+
+/usr/bin/i3lock -k -u \
+-i /home/pietro/Pictures/.lock \
+--datecolor=${color[7]}FF \
+--timecolor=${color[7]}FF \
+--layout-font="terminus (ttf)" \
+--timestr="" \
+--indpos="26:715" \
+--date-font="Roboto" \
+--time-font="Roboto" \
+--datestr="" \
+--time-align 1 \
+--date-align 1
+

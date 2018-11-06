@@ -23,6 +23,9 @@ dotfiles:
   d_scripts:
     dst: ~/.scripts
     src: scripts
+  d_util:
+    dst: ~/.scripts/util
+    src: scripts/util
   f_album-pic.sh:
     dst: ~/.scripts/util/album-pic.sh
     src: scripts/util/album-pic.sh
@@ -54,6 +57,9 @@ dotfiles:
   f_dunstrc.template:
     dst: ~/.config/dunst/dunstrc.template
     src: config/dunst/dunstrc.template
+  f_filer.sh:
+    dst: ~/.scripts/util/filer.sh
+    src: scripts/util/filer.sh
   f_index.html:
     dst: ~/.config/homepage/index.html
     src: config/homepage/index.html
@@ -66,9 +72,6 @@ dotfiles:
   f_input.conf:
     dst: ~/.config/mpv/input.conf
     src: config/mpv/input.conf
-  f_lock:
-    dst: /usr/bin/lock
-    src: usr/bin/lock
   f_mpv.conf:
     dst: ~/.config/mpv/mpv.conf
     src: config/mpv/mpv.conf
@@ -86,9 +89,6 @@ dotfiles:
   f_prisma.css.template:
     dst: ~/Projects/css/Prisma.css.template
     src: Projects/css/Prisma.css.template
-  f_profile:
-    dst: /etc/profile
-    src: etc/profile
   f_profile-switch.sh:
     dst: ~/.scripts/util/profile-switch.sh
     src: scripts/util/profile-switch.sh
@@ -101,9 +101,6 @@ dotfiles:
   f_style.css:
     dst: ~/.config/homepage/style.css
     src: config/homepage/style.css
-  f_toggle:
-    dst: /usr/bin/toggle
-    src: usr/bin/toggle
   f_xresources:
     dst: ~/.Xresources
     src: Xresources

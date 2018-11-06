@@ -1,5 +1,9 @@
 #!/bin/sh
 
+tmp_file=/tmp/scrot-$RANDOM.png
+
+scrot "$tmp_file"
+
 file=$(filer.sh "$HOME/Pictures/Screenshots" screenshot png)
 
-scrot "$file"
+mv "$tmp_file" "$file"
