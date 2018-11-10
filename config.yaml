@@ -111,6 +111,10 @@ dotfiles:
     dst: ~/.zshrc
     src: zshrc
 profiles:
+  rice:
+    dotfiles: []
+    include:
+    - work
   the-arch:
     dotfiles:
     - ALL
@@ -118,7 +122,3 @@ profiles:
     dotfiles: []
     include:
     - the-arch
-  rice:
-    dotfiles: []
-    include:
-    - work
