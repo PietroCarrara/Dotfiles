@@ -6,6 +6,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'fatih/vim-go'
 	Plug 'codelitt/vim-qtpl'
 	Plug 'ap/vim-buftabline'
+	Plug 'maksimr/vim-jsbeautify'
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'dylanaraps/wal.vim'
 	Plug 'w0rp/ale'
@@ -104,6 +105,9 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " go-vim
 let g:go_doc_keywordprg_enabled = 0
 let g:go_fmt_command = "goimports"
+
+" psp-sdk header files
+let $C_INCLUDE_PATH = '/usr/local/pspdev/psp/sdk/include:/usr/local/pspdev/include'
 
 " Omnisharp
 let g:deoplete_omnisharp_exe_path   = get(g:, "deoplete_omnisharp_exe_path", '~/.local/share/nvim/plugged/deoplete-omnisharp/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe')

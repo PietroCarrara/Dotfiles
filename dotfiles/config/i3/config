@@ -1,3 +1,4 @@
+
 # Workspaces
 set $ws1 1:I
 set $ws2 2:II
@@ -157,9 +158,6 @@ bindsym $mod+y exec --no-startup-id xdotool key $(zenity --entry | sed -e 's/\(.
 
 # Record screen
 bindsym $mod+u exec --no-startup-id toggle ffmpeg -video_size 1366x768 -framerate 60 -f x11grab -i :0.0 -c:v libx264 -preset ultrafast -y Videos/screencast.mkv
-
-# Hide stuff
-bindsym $mod+Shift+d exec --no-startup-id pactl set-sink-volume 1 0% ; workspace Programção; exec $term -e top ; exec $term -e nvim /bin/neofetch
 
 # kill focused window
 bindsym $mod+Shift+c kill
