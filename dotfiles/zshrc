@@ -18,6 +18,8 @@ compinit
 export EDITOR="nvim"
 export GOPATH="$HOME/go"
 
+export PATH="$PATH:~/.scripts/util:~/.scripts/images/:~/.scripts/colors"
+
 # Ctrl + arrows
 bindkey "\eOd" backward-word
 bindkey "\eOc" forward-word
@@ -28,7 +30,6 @@ alias grep='grep --color=auto'
 alias v='nvim'
 alias q=exit
 alias cd..='cd ..'
-alias deluged='LD_LIBRARY_PATH=/opt/boostold deluged -p 58846'
 
 # 4chan always impresses me
 mkcd() {

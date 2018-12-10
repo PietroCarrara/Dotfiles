@@ -9,4 +9,4 @@
 inp="$1"
 out="$2"
 
-convert "$inp" -blur 0x5 "$out"
+convert "$inp" -blur 0x4 "$out"

@@ -12,9 +12,11 @@ config:
   banner: true
   create: true
   dotpath: dotfiles
+  ignoreempty: false
   keepdot: false
   link_by_default: false
   longkey: false
+  showdiff: false
   workdir: ~/.config/dotdrop
 dotfiles:
   d_homepage:
@@ -29,6 +31,9 @@ dotfiles:
   f_album-pic.sh:
     dst: ~/.scripts/util/album-pic.sh
     src: scripts/util/album-pic.sh
+  f_blur.sh:
+    dst: ~/.scripts/images/blur.sh
+    src: scripts/images/blur.sh
   f_cava_config:
     dst: ~/.config/cava/config
     src: config/cava/config
