@@ -273,7 +273,6 @@ exec --no-startup-id polybar top
 
 exec --no-startup-id mpd
 exec --no-startup-id compton
-exec --no-startup-id LD_LIBRARY_PATH=/opt/boostold deluged -p 58846
 exec --no-startup-id deluge
 exec --no-startup-id deluge-web -p 12345
 exec --no-startup-id dunst

@@ -192,7 +192,6 @@ format-disconnected =  No Network
 type = internal/date
 interval = 5
 
-date = ""
 date-alt = "%d/%m/%Y "
 
 time = %H:%M
