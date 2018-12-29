@@ -100,6 +100,9 @@ dotfiles:
   f_rc.conf:
     dst: ~/.config/ranger/rc.conf
     src: config/ranger/rc.conf
+  f_rice.sh:
+    dst: ~/.scripts/util/rice.sh
+    src: scripts/util/rice.sh
   f_rifle.conf:
     dst: ~/.config/ranger/rifle.conf
     src: config/ranger/rifle.conf

@@ -29,7 +29,7 @@ function buildXresources() {
 }
 
 function buildSteam() {
-	wal_steam.py
+	wal_steam
 }
 
 function buildCava() {

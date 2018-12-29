@@ -1,3 +1,14 @@
+# Workspaces
+set $ws1 1:I
+set $ws2 2:II
+set $ws3 3:III
+set $ws4 4:IV
+set $ws5 5:V
+set $ws6 6:VI
+set $ws7 7:VII
+set $ws8 8:VIII
+set $ws9 9:IX
+set $ws0 10:X
 
 # Workspaces
 set $ws1 1:I
@@ -67,6 +78,8 @@ font pango:kakwa kakwafont 9
 
 # Floating terminal
 for_window [title="float"] floating enable
+for_window [title="Friends List" class="Steam"] floating enable
+for_window [title="Steam - News" class="Steam"] floating enable
 for_window [title="Code Overlord"] floating enable
 for_window [class="Unity"] floating enable
 for_window [class="plasmashell"] floating enable
@@ -280,4 +293,5 @@ exec --no-startup-id xbanish
 
 exec --no-startup-id /usr/lib/kdeconnectd
 
+exec --no-startup-id "musicplayer.sh"
 exec --no-startup-id "musicplayer.sh"

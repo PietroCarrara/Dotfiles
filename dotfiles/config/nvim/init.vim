@@ -16,6 +16,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'Shougo/context_filetype.vim'
 	Plug 'zchee/deoplete-go', { 'do': 'make' }
+	Plug 'jdonaldson/vaxe'
+	Plug 'vim-scripts/L9'
+	Plug 'vim-scripts/AutoComplPop'
 "Initialize plugin system
 call plug#end()
 
@@ -24,6 +27,9 @@ set omnifunc=syntaxcomplete#Complete
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+" Disable deoplete for haxe, as vaxe conflicts with it
+:autocmd BufReadPre *.hx
+\ call deoplete#disable()
 
 " Colorscheme
 colorscheme wal
@@ -96,6 +102,7 @@ nnoremap K :bprev<CR>
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 set completeopt-=preview
+set autowrite
 
 " NERDTree
 nnoremap <F3> :NERDTreeToggle<CR>
