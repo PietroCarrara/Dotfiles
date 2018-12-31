@@ -1,19 +1,16 @@
 {
-    "border": "pixel",
     "floating": "auto_off",
     "layout": "splitv",
     "percent": 0.5,
     "type": "con",
     "nodes": [
         {
-            "border": "pixel",
             "floating": "auto_off",
             "layout": "splith",
             "percent": 0.5,
             "type": "con",
             "nodes": [
                 {
-                    "border": "pixel",
                     "floating": "auto_off",
                     "geometry": {
                        "height": 200,
@@ -33,7 +30,6 @@
             ]
         },
         {
-            "border": "pixel",
             "floating": "auto_off",
             "geometry": {
                "height": 340,
@@ -55,7 +51,6 @@
 }
 
 {
-    "border": "pixel",
     "floating": "auto_off",
     "geometry": {
        "height": 340,
@@ -67,10 +62,10 @@
     "percent": 0.5,
     "swallows": [
        {
-       "class": "^URxvt$",
-       "instance": "^urxvt$"
+		   "title": "mp-ncmpcpp"
        }
     ],
     "type": "con"
 }
+
 

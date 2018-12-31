@@ -8,5 +8,10 @@
 
 i3-msg 'workspace 10:X; append_layout ~/.config/i3/music.json'
 
-urxvtc --title mp-ncmpcpp -e ncmpcpp &
-urxvtc -e cava &
+{%@@ if profile == "mac" @@%}
+st -T mp-ncmpcpp -e ncmpcpp &
+urxvtc -T cava -w 12 -e cava &
+{%@@ else @@%}
+urxvtc -T mp-ncmpcpp -e ncmpcpp &
+urxvtc -T cava -e cava &
+{%@@ endif @@%}

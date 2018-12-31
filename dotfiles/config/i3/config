@@ -10,24 +10,12 @@ set $ws8 8:VIII
 set $ws9 9:IX
 set $ws0 10:X
 
-# Workspaces
-set $ws1 1:I
-set $ws2 2:II
-set $ws3 3:III
-set $ws4 4:IV
-set $ws5 5:V
-set $ws6 6:VI
-set $ws7 7:VII
-set $ws8 8:VIII
-set $ws9 9:IX
-set $ws0 10:X
-
 # Gaps
 set $inner 15
-{%@@ if profile == "work" @@%}
-set $outer 10
-{%@@ else @@%}
+{%@@ if profile == "rice" @@%}
 set $outer 40
+{%@@ else @@%}
+set $outer 10
 {%@@ endif @@%}
 gaps inner $inner
 gaps outer $outer
@@ -36,7 +24,11 @@ gaps outer $outer
 set $mod Mod4
 
 # Term
+{%@@ if profile == "mac" @@%}
+set $term st
+{%@@ else @@%}
 set $term urxvtc
+{%@@ endif @@%}
 
 # Colors
 set_from_resource $fg i3wm.color7
@@ -71,10 +63,7 @@ bindsym $mod+Shift+minus gaps outer current minus 5
 bindsym $mod+Control+plus gaps inner current set $inner
 bindsym $mod+Control+minus gaps outer current set $outer
 
-new_window pixel 4
-
-# Font
-font pango:kakwa kakwafont 9
+default_border pixel 4
 
 # Floating terminal
 for_window [title="float"] floating enable
@@ -93,14 +82,14 @@ floating_modifier $mod
 
 # Start a terminal
 bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $term --title "float"
+bindsym $mod+Shift+Return exec $term -T "float"
 
 # "Minimize" window
 bindsym $mod+n move scratchpad
 bindsym $mod+Shift+n scratchpad show
 
 bindsym $mod+i exec --no-startup-id "mpc crop; mpc load Favoritas; mpc shuffle; mpc play 2; mpc del 1;"
-bindsym $mod+Shift+i exec $term --title "float" -e nvim ~/Docs/todo
+bindsym $mod+Shift+i exec $term -T "float" -e nvim ~/Docs/todo
 
 # Switch dotdrop profile
 bindsym $mod+Shift+p exec --no-startup-id profile-switch.sh
@@ -152,7 +141,7 @@ bindsym $mod+m exec --no-startup-id toggle xbanish
 
 # File Manager
 bindsym $mod+t exec $term -e ranger
-bindsym $mod+Shift+t exec $term --title float -e ranger
+bindsym $mod+Shift+t exec $term -T float -e ranger
 
 # Web Browser
 bindsym $mod+w exec firefox
@@ -176,7 +165,11 @@ bindsym $mod+u exec --no-startup-id toggle ffmpeg -video_size 1366x768 -framerat
 bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+r exec --no-startup-id dmenu_run -fn "kakwa kakwafont" -nb "$bg" -nf "$fg" -sf "$bg" -sb "$fg"
+{%@@ if profile == "mac" @@%}
+bindsym $mod+r exec --no-startup-id dmenu_run -fn "SF Pro Display" -nb "$bg" -nf "$fg" -sf "$bg" -sb "$fg"
+{%@@ else @@%}
+bindsym $mod+r exec --no-startup-id dmenu_run -fn "kakwafont" -nb "$bg" -nf "$fg" -sf "$bg" -sb "$fg"
+{%@@ endif @@%}
 
 # change focus
 bindsym $mod+h focus left
@@ -293,5 +286,4 @@ exec --no-startup-id xbanish
 
 exec --no-startup-id /usr/lib/kdeconnectd
 
-exec --no-startup-id "musicplayer.sh"
 exec --no-startup-id "musicplayer.sh"

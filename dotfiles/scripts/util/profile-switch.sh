@@ -8,7 +8,7 @@
 # Switches between dotdrop profiles
 #
 
-profile=$(zenity --list --column="" --radiolist --column="Profile" x work x rice)
+profile=$(zenity --list --column="" --radiolist --column="Profile" x work x rice x mac)
 
 if [ -z $profile ]; then
 	exit 1;
