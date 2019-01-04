@@ -6,6 +6,8 @@ URxvt.scrollBar: false
 
 URxvt.perl-ext-common: selection-to-clipboard,resize-font
 
+URxvt.externalBorder: 12
+
 Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
