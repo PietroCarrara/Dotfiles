@@ -25,7 +25,7 @@ set $mod Mod4
 
 # Term
 {%@@ if profile == "mac" @@%}
-set $term st
+set $term xst
 {%@@ else @@%}
 set $term urxvtc
 {%@@ endif @@%}
@@ -127,7 +127,7 @@ bindsym $mod+p exec --no-startup-id "mpc crop; mpc add /; mpc shuffle; mpc play 
 # Set playlist
 bindsym $mod+o exec --no-startup-id mpc crop && mpc ls | grep -i "$(zenity --entry --text='What to play next?')" | mpc add && mpc play 2 && mpc del 1
 # Set and shuffle playlist
-bindsym $mod+Shift+o exec --no-startup-id mpc crop && mpc ls | grep -i "$(zenity --entry --text='What to play next?')" | mpc add && mpc shuffle && mpc play 2 && mpc del 1
+bindsym $mod+Shift+o open
 
 # Screenshot
 bindsym Print exec --no-startup-id sh scrot.sh

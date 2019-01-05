@@ -28,7 +28,7 @@ width = 1256
 {%@@ endif @@%}
 
 {%@@ if profile == "mac" @@%}
-height = 27
+# height = 27
 {%@@ endif @@%}
 
 background = ${colors.background}
@@ -37,8 +37,7 @@ foreground = ${colors.foreground}
 {%@@ if profile == "rice" @@%}
 border-size = 3
 border-color = ${colors.foreground}
-{%@@ endif @@%}
-{%@@ if profile == "work" @@%}
+{%@@ else @@%}
 border-bottom = 3
 border-color = ${colors.foreground}
 {%@@ endif @@%}
