@@ -25,7 +25,7 @@ bindkey "\eOd" backward-word
 bindkey "\eOc" forward-word
 
 alias ncdu='echo "\.*" > /tmp/ncdu-ex; ncdu -r -X /tmp/ncdu-ex'
-alias ls='ls --color=auto'
+alias ls='python $HOME/.scripts/better-ls/lsicons.py'
 alias grep='grep --color=auto'
 alias v='nvim'
 alias q=exit

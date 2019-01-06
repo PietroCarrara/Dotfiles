@@ -19,6 +19,9 @@ config:
   showdiff: false
   workdir: ~/.config/dotdrop
 dotfiles:
+  d_better-ls:
+    dst: ~/.scripts/better-ls
+    src: scripts/better-ls
   d_homepage:
     dst: ~/.config/homepage
     src: config/homepage

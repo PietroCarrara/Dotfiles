@@ -1,0 +1,3 @@
+[submodule "dotfiles/scripts/better-ls"]
+	path = dotfiles/scripts/better-ls
+	url = https://github.com/mnurzia/better-ls.git
