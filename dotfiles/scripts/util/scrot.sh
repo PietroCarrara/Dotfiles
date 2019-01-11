@@ -8,4 +8,4 @@ file=$(filer.sh "$HOME/Pictures/Screenshots" screenshot png)
 
 mv "$tmp_file" "$file"
 
-notify-send -i "$file" 'Smile!' "Screenshot saved!"
+notify-send -i "$file" 'Smile! ;)' "Screenshot saved!"

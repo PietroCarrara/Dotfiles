@@ -1,0 +1,24 @@
+mpd_music_dir = ~/Music
+
+# Never fade selection
+playlist_disable_highlight_delay = 0
+
+now_playing_prefix = " + " 
+
+# Notify song playing
+execute_on_song_change = album-pic.sh
+
+# Always highlight the current playing song
+autocenter_mode = yes
+
+progressbar_look = -|
+
+mouse_support = no
+
+display_bitrate = yes
+
+header_visibility = no
+statusbar_visibility = no
+titles_visibility = no
+
+lyrics_fetchers = genius, lyricwiki, azlyrics, sing365, lyricsmania, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet

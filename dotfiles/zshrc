@@ -25,11 +25,11 @@ bindkey "\eOd" backward-word
 bindkey "\eOc" forward-word
 
 alias ncdu='echo "\.*" > /tmp/ncdu-ex; ncdu -r -X /tmp/ncdu-ex'
-alias ls='python $HOME/.scripts/better-ls/lsicons.py'
 alias grep='grep --color=auto'
 alias v='nvim'
 alias q=exit
 alias cd..='cd ..'
+alias ls='ls --color=auto'
 alias lime='haxelib run lime'
 alias hxpunk='haxelib run HaxePunk'
 alias flixel='haxelib run flixel-tools'

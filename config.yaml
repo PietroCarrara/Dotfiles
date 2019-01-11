@@ -34,6 +34,9 @@ dotfiles:
   f_album-pic.sh:
     dst: ~/.scripts/util/album-pic.sh
     src: scripts/util/album-pic.sh
+  f_bindings:
+    dst: ~/.config/ncmpcpp/bindings
+    src: config/ncmpcpp/bindings
   f_blur.sh:
     dst: ~/.scripts/images/blur.sh
     src: scripts/images/blur.sh
@@ -86,6 +89,9 @@ dotfiles:
   f_music.json:
     dst: ~/.config/i3/music.json
     src: config/i3/music.json
+  f_ncmpcpp_config:
+    dst: ~/.config/ncmpcpp/config
+    src: config/ncmpcpp/config
   f_pkgbuild:
     dst: ~/.config/st/PKGBUILD
     src: config/st/PKGBUILD
