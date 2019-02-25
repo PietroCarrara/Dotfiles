@@ -265,9 +265,6 @@ bindsym $mod+Control+Down resize grow height 20 px or 5 ppt
 # Lock the screen
 exec --no-startup-id lock
 
-# Wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/.wallpaper
-
 # Automounter
 exec --no-startup-id udiskie
 

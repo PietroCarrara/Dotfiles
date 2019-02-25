@@ -1,0 +1,14 @@
+# Enable touchpad tap
+xinput set-prop 'ETPS/2 Elantech Touchpad' 'libinput Tapping Enabled' 1
+
+# Map F{10,11,12} to Vol{Mute,Down,Up}
+xmodmap ~/.Xmodmap
+
+# Colors and etc
+xrdb ~/.Xresources
+
+xrandr --auto
+feh --bg-fill ~/Pictures/.wallpaper
+
+# wm
+exec i3
