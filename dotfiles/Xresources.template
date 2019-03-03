@@ -1,12 +1,10 @@
+! Set depth to make transparency work.
+URxvt*depth: 32
 
-st.font: SF Mono:size=9:antialias=true:autohint=true
-st.bold_font: 1
-st.borderpx: 14
-
-URxvt*font: xft:kakwa kakwafont:size=8, xft:Zpix:size=9:antialias=false
-URxvt.boldFont: 
-! URxvt*font: xft:SF Mono:size=9, xft:Osaka:size=9
-! URxvt.letterSpace: -1
+! URxvt*font: xft:kakwa kakwafont:size=8, xft:Zpix:size=9:antialias=false
+! URxvt.boldFont: 
+URxvt*font: xft:SF Mono:size=9
+URxvt.letterSpace: -1
 
 URxvt.scrollBar: false
 
@@ -21,4 +19,3 @@ Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
-

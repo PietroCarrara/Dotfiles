@@ -24,11 +24,7 @@ gaps outer $outer
 set $mod Mod4
 
 # Term
-{%@@ if profile == "mac" @@%}
-set $term xst
-{%@@ else @@%}
 set $term urxvtc
-{%@@ endif @@%}
 
 # Colors
 set_from_resource $fg i3wm.color7
@@ -121,8 +117,8 @@ bindsym XF86AudioPrev exec --no-startup-id mpc prev
 bindsym XF86AudioPause exec --no-startup-id mpc toggle
 bindsym XF86AudioStop exec --no-startup-id mpc clear
 
-# Suffle playlist
-bindsym $mod+p exec --no-startup-id "mpc crop; mpc add /; mpc shuffle; mpc play 2; mpc del 1;"
+# Detect monitors
+bindsym $mod+p exec --no-startup-id xrandr --auto && feh --bg-fill ~/Pictures/.wallpaper
 
 # Set playlist
 bindsym $mod+o exec --no-startup-id mpc crop && mpc ls | grep -i "$(zenity --entry --text='What to play next?')" | mpc add && mpc play 2 && mpc del 1

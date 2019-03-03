@@ -8,5 +8,5 @@
 
 i3-msg 'workspace 10:X; append_layout ~/.config/i3/music.json'
 
-xst -T mp-ncmpcpp -e ncmpcpp &
+urxvtc -T mp-ncmpcpp -e ncmpcpp &
 urxvtc -T cava -e cava &
