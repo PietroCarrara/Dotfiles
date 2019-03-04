@@ -1,0 +1,9 @@
+body {
+	background-color: {color0};
+	color: {color7};
+	font-size: 16px;
+}
+
+a {
+	color: {color7};
+}

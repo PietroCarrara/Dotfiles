@@ -1,0 +1,13 @@
+[general]
+bar_width = 3
+
+[output]
+method = ncurses
+
+[color]
+# foreground = '{color1}'
+
+gradient = 1
+gradient_color_1 = '{color6}'
+gradient_color_2 = '{color1}'
+

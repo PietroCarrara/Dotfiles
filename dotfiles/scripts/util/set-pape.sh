@@ -11,6 +11,6 @@ blur.sh "$HOME/Pictures/.wallpaper" "png:$HOME/Pictures/.lock"
 
 feh --bg-fill "$file"
 
-wal -i "$file" -g -a 100
+wpg -s "$file"
 
 rice.sh

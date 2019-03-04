@@ -1,55 +1,14 @@
 #!/bin/sh
 
-# Script to 'compile' rice configs
-
-for i in {0..15}; do
-	c=$(xrdb -query | grep "*color$i:")
-	c=${c#*#}
-	color[$i]="#$c"
-done
-
-function buildDunst() {
-
-	"$HOME/.scripts/util/replacer/replacer.sh" "$HOME/.config/dunst/dunstrc.template"
-	
-	killall dunst
-	i3-msg exec dunst
-}
-
-function buildHomePage() {
-	"$HOME/.scripts/util/replacer/replacer.sh" "$HOME/.config/homepage/style.css.template"
-}
-
-function buildXresources() {
-	cp "$HOME/.cache/wal/colors.Xresources" "$HOME/.Xresources"
-
-	cat "$HOME/.Xresources.template">> "$HOME/.Xresources"
-
-	xrdb "$HOME/.Xresources"
-}
-
-function buildSteam() {
+# List of processes to be killed and restarted
+list=(
+	dunst
 	wal_steam
-}
+)
 
-function buildCava() {
-	"$HOME/.scripts/util/replacer/replacer.sh" "$HOME/.config/cava/config.template"
-}
-
-function buildPrismaCss() {
-	"$HOME/.scripts/util/replacer/replacer.sh" "$HOME/Projects/css/Prisma.css.template"
-}
-
-function buildQuteBrowser() {
-	"$HOME/.scripts/util/replacer/replacer.sh" "$HOME/.config/qutebrowser/config.py.template"
-}
-
-buildDunst
-buildHomePage
-buildXresources
-buildSteam
-buildCava
-buildPrismaCss
-buildQuteBrowser
+for i in "${list[@]}"; do
+	killall "$i";
+	i3-msg 'exec --no-startup-id' "$i";
+done
 
 notify-send "Rice completed!"

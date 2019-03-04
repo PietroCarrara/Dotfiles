@@ -1,0 +1,74 @@
+! X colors.
+*foreground:        #eadedf
+*background:        #0a0a09
+*.foreground:       #eadedf
+*.background:       #0a0a09
+emacs*foreground:   #eadedf
+emacs*background:   #0a0a09
+URxvt*foreground:   #eadedf
+XTerm*foreground:   #eadedf
+UXTerm*foreground:  #eadedf
+URxvt*background:   #0a0a09
+XTerm*background:   #0a0a09
+UXTerm*background:  #0a0a09
+URxvt*cursorColor:  #eadedf
+XTerm*cursorColor:  #eadedf
+UXTerm*cursorColor: #eadedf
+URxvt*borderColor:  #0a0a09
+
+! Colors 0-15.
+*.color0: #0a0a09
+*color0:  #0a0a09
+*.color1: #D47698
+*color1:  #D47698
+*.color2: #A8949D
+*color2:  #A8949D
+*.color3: #FD97BD
+*color3:  #FD97BD
+*.color4: #D0A9B3
+*color4:  #D0A9B3
+*.color5: #C4C2BD
+*color5:  #C4C2BD
+*.color6: #EFAAC2
+*color6:  #EFAAC2
+*.color7: #eadedf
+*color7:  #eadedf
+*.color8: #a39b9c
+*color8:  #a39b9c
+*.color9: #D47698
+*color9:  #D47698
+*.color10: #A8949D
+*color10:  #A8949D
+*.color11: #FD97BD
+*color11:  #FD97BD
+*.color12: #D0A9B3
+*color12:  #D0A9B3
+*.color13: #C4C2BD
+*color13:  #C4C2BD
+*.color14: #EFAAC2
+*color14:  #EFAAC2
+*.color15: #eadedf
+*color15:  #eadedf
+
+! Black color that will not be affected by bold highlighting.
+*.color66: #8b5367
+*color66:  #8b5367
+
+! URxvt*font: xft:kakwa kakwafont:size=9, xft:Zpix:size=9:antialias=false
+! URxvt.boldFont: 
+URxvt*font: xft:SF Mono:size=9
+URxvt.letterSpace: -1
+
+URxvt.scrollBar: false
+
+URxvt.perl-ext-common: selection-to-clipboard,resize-font
+
+URxvt.externalBorder: 12
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault

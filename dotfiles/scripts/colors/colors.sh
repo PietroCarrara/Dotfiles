@@ -10,7 +10,7 @@
 
 #T='▀▄'   # The test text
 
-T='/g/'
+T='OwO'
 
 echo -e "\n                 BLK     RED     GRN     YEL\
      BLU     MAG     CYN     WHT";

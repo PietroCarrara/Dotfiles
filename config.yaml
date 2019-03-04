@@ -19,15 +19,15 @@ config:
   showdiff: false
   workdir: ~/.config/dotdrop
 dotfiles:
-  d_better-ls:
-    dst: ~/.scripts/better-ls
-    src: scripts/better-ls
   d_homepage:
     dst: ~/.config/homepage
     src: config/homepage
   d_scripts:
     dst: ~/.scripts
     src: scripts
+  d_templates:
+    dst: ~/.config/wpg/templates
+    src: config/wpg/templates
   d_util:
     dst: ~/.scripts/util
     src: scripts/util
@@ -54,20 +54,11 @@ dotfiles:
   f_config.py:
     dst: ~/.config/qutebrowser/config.py
     src: config/qutebrowser/config.py
-  f_config.py.template:
-    dst: ~/.config/qutebrowser/config.py.template
-    src: config/qutebrowser/config.py.template
-  f_config.template:
-    dst: ~/.config/cava/config.template
-    src: config/cava/config.template
   f_dunstrc:
     actions:
     - dunst-run
     dst: ~/.config/dunst/dunstrc
     src: config/dunst/dunstrc
-  f_dunstrc.template:
-    dst: ~/.config/dunst/dunstrc.template
-    src: config/dunst/dunstrc.template
   f_filer.sh:
     dst: ~/.scripts/util/filer.sh
     src: scripts/util/filer.sh
@@ -100,12 +91,6 @@ dotfiles:
     - polybar-run
     dst: ~/.config/polybar/config
     src: config/polybar/config
-  f_prisma.css:
-    dst: ~/Projects/css/Prisma.css
-    src: Projects/css/Prisma.css
-  f_prisma.css.template:
-    dst: ~/Projects/css/Prisma.css.template
-    src: Projects/css/Prisma.css.template
   f_profile-switch.sh:
     dst: ~/.scripts/util/profile-switch.sh
     src: scripts/util/profile-switch.sh
@@ -127,9 +112,6 @@ dotfiles:
   f_xresources:
     dst: ~/.Xresources
     src: Xresources
-  f_xresources.template:
-    dst: ~/.Xresources.template
-    src: Xresources.template
   f_zshrc:
     dst: ~/.zshrc
     src: zshrc
