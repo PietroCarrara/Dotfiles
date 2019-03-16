@@ -25,12 +25,13 @@ unlocker &
 -i /home/pietro/Pictures/.lock \
 --datecolor=${color[7]}FF \
 --timecolor=${color[7]}FF \
---layout-font="terminus (ttf)" \
---timestr="" \
+--layout-font="SF Display Pro" \
+--date-font="SF Display Pro" \
+--time-font="SF Display Pro" \
+--timestr="%H:%m" \
+--datestr="%d/%m/%Y" \
 --indpos="26:715" \
---date-font="Roboto" \
---time-font="Roboto" \
---datestr="" \
 --time-align 1 \
 --date-align 1
+
 

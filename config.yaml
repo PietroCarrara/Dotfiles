@@ -74,6 +74,9 @@ dotfiles:
   f_input.conf:
     dst: ~/.config/mpv/input.conf
     src: config/mpv/input.conf
+  f_lock:
+    dst: ~/.scripts/util/lock
+    src: scripts/util/lock
   f_mpv.conf:
     dst: ~/.config/mpv/mpv.conf
     src: config/mpv/mpv.conf
