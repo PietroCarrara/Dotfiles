@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 MUSIC_ROOT="$HOME/Music/"
 NO_PIC="$HOME/Pictures/.no-pic.png"
@@ -20,10 +20,16 @@ pingo() {
 	curl localhost:6969/setImage --data-urlencode  image="$file" || goview "$file"
 }
 
-{
-	findpic
+while true; do
 
-	pingo &
+	lastSong=$currSong
+	currSong=$(mpc current)
 
-	notify-send -i "$file" "Now Playing:" "$(mpc current -f '%artist% - %title%')" &
-} &> /dev/null
+	if [[ $lastSong != $currSong ]]; then
+		findpic
+		# pingo &
+		notify-send -i "$file" "Now Playing:" "$(mpc current -f '%artist% - %title%')" &
+	fi
+
+	mpc idle player
+done

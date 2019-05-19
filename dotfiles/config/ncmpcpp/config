@@ -6,7 +6,7 @@ playlist_disable_highlight_delay = 0
 now_playing_prefix = " + " 
 
 # Notify song playing
-execute_on_song_change = album-pic.sh
+# execute_on_song_change = album-pic.sh
 
 # Always highlight the current playing song
 autocenter_mode = yes
