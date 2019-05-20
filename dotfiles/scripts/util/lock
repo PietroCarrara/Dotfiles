@@ -1,4 +1,9 @@
-#!/bin/sh
+#!/bin/bash
+
+if [[ $XDG_CURRENT_DESKTOP == "KDE" ]]; then
+	loginctl lock-session
+	exit 0
+fi
 
 unlocker() {
 	# Unlock on mouse movement :)
@@ -28,7 +33,7 @@ unlocker &
 --layout-font="SF Display Pro" \
 --date-font="SF Display Pro" \
 --time-font="SF Display Pro" \
---timestr="%H:%m" \
+--timestr="%H:%M" \
 --datestr="%d/%m/%Y" \
 --indpos="26:715" \
 --time-align 1 \
