@@ -14,10 +14,10 @@ config:
   dotpath: dotfiles
   ignoreempty: false
   keepdot: false
-  link_by_default: false
   longkey: false
   showdiff: false
   workdir: ~/.config/dotdrop
+  link_on_import: nolink
 dotfiles:
   d_homepage:
     dst: ~/.config/homepage
@@ -123,14 +123,11 @@ profiles:
     dotfiles:
     - ALL
   work:
-    dotfiles: []
     include:
     - the-arch
   mac:
-    dotfiles: []
     include:
     - work
   rice:
-    dotfiles: []
     include:
     - work
