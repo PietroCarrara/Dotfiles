@@ -1,5 +1,7 @@
 # Dotfiles
 
+<img src="Screenshots/desktop.png" align="right" width="40%">
+
 My personal dotfiles repository
 
 ------------------
