@@ -51,9 +51,6 @@ dotfiles:
     - i3-run
     dst: ~/.config/i3/config
     src: config/i3/config
-  f_config.py:
-    dst: ~/.config/qutebrowser/config.py
-    src: config/qutebrowser/config.py
   f_dunstrc:
     actions:
     - dunst-run
