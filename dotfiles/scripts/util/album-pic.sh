@@ -28,8 +28,8 @@ while true; do
 
 	if [[ $lastSong != $currSong ]]; then
 		findpic
-		pingo &
-		notify-send -i "$file" -a 'Now Playing' "$(mpc current -f '%title%')" "$(mpc current -f '%artist%')" &
+		# pingo &
+		notify-send -i "$file" -a 'Now Playing' " $(mpc current -f '%title%')" " $(mpc current -f '%artist%')" &
 	fi
 
 	mpc idle player
