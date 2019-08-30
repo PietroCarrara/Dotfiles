@@ -16,6 +16,6 @@ fi
 
 cd $HOME/Projects/Dotfiles
 
-dotdrop install -f -p $profile
+yes | dotdrop install -p $profile
 
 rice.sh

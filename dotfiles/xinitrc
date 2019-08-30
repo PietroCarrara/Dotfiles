@@ -7,8 +7,16 @@ xmodmap ~/.Xmodmap
 # Colors and etc
 xrdb ~/.Xresources
 
-xrandr --auto
-feh --bg-fill ~/Pictures/.wallpaper
+WM='kde'
 
-# wm
-exec i3
+case $WM in
+	'i3')
+		xrandr --auto
+		feh --bg-fill ~/Pictures/.wallpaper
+		exec i3
+		;;
+	'kde')
+		exec startkde
+		;;
+esac
+
