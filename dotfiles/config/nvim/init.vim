@@ -3,46 +3,18 @@
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
-	Plug 'fatih/vim-go'
-	Plug 'codelitt/vim-qtpl'
 	Plug 'ap/vim-buftabline'
-	Plug 'maksimr/vim-jsbeautify'
 	Plug 'jiangmiao/auto-pairs'
-	Plug 'dylanaraps/wal.vim'
-	Plug 'w0rp/ale'
 	Plug 'scrooloose/nerdtree'
 	Plug 'alvan/vim-closetag'
 	Plug 'lervag/vimtex'
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	Plug 'Shougo/context_filetype.vim'
-	Plug 'zchee/deoplete-go', { 'do': 'make' }
-	Plug 'jdonaldson/vaxe'
-	Plug 'vim-scripts/L9'
-	Plug 'vim-scripts/AutoComplPop'
 "Initialize plugin system
 call plug#end()
 
 filetype plugin on
-set omnifunc=syntaxcomplete#Complete
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
-" Disable deoplete for haxe, as vaxe conflicts with it
-:autocmd BufReadPre *.hx
-\ call deoplete#disable()
-
-" Colorscheme
-colorscheme wal
 
 " Buffer list
 let g:bufferline_show_bufnr = 0
-
-" ALE
-let g:ale_lint_on_enter = 1
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '-'
-
-" Buffer tabline
 let g:buftabline_show = 1
 
 " Tabs
@@ -82,43 +54,18 @@ nnoremap P "+P
 vnoremap p "+p
 vnoremap P "+P
 
-" Compiling
-:autocmd FileType go  nnoremap <buffer> <F5> :GoBuild<Enter>
-:autocmd FileType cs  nnoremap <buffer> <F5> :OmniSharpBuild<Enter>
-:autocmd FileType tex nnoremap <buffer> <F5> :VimtexCompile<Enter>
-
-" Renaming
-:autocmd FileType cs nnoremap <buffer> <F2> :OmniSharpRename<Enter>
-
-" Add to project
-:autocmd FileType cs nnoremap <buffer> <F4> :OmniSharpAddToProject<Enter>
-
 " Move trhough buffers
 set hidden
 nnoremap J :bnext<CR>
 nnoremap K :bprev<CR>
-
-" Omnicompletion
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-set completeopt-=preview
-set autowrite
 
 " NERDTree
 nnoremap <F3> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
-" go-vim
-let g:go_doc_keywordprg_enabled = 0
-let g:go_fmt_command = "goimports"
-
 " psp-sdk header files
 let $C_INCLUDE_PATH = '/usr/local/pspdev/psp/sdk/include:/usr/local/pspdev/include'
-
-" Omnisharp
-let g:deoplete_omnisharp_exe_path   = get(g:, "deoplete_omnisharp_exe_path", '~/.local/share/nvim/plugged/deoplete-omnisharp/omnisharp-server/OmniSharp/bin/Debug/OmniSharp.exe')
-let g:deoplete_omnisharp_port   = get(g:, "deoplete_omnisharp_port", 9999)
 
 " Vim-close tags
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.php'

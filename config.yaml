@@ -83,9 +83,6 @@ dotfiles:
   f_ncmpcpp_config:
     dst: ~/.config/ncmpcpp/config
     src: config/ncmpcpp/config
-  f_pkgbuild:
-    dst: ~/.config/st/PKGBUILD
-    src: config/st/PKGBUILD
   f_polybar_config:
     actions:
     - polybar-run

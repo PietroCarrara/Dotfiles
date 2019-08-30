@@ -20,6 +20,7 @@ pingo() {
 	curl localhost:6969/setImage --data-urlencode  image="$file" || goview "$file"
 }
 
+
 while true; do
 
 	lastSong=$currSong
@@ -27,7 +28,7 @@ while true; do
 
 	if [[ $lastSong != $currSong ]]; then
 		findpic
-		# pingo &
+		pingo &
 		notify-send -i "$file" -a 'Now Playing' "$(mpc current -f '%title%')" "$(mpc current -f '%artist%')" &
 	fi
 
